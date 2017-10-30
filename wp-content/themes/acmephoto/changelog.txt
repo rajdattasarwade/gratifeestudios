@@ -1,0 +1,21 @@
+== Change log ==
+
+= 1.0.3 =
+* Update: Default values
+* Fix: CSS tweaks
+
+= 1.0.2 =
+* Add: Feature Slider
+* Add: Menu Position Options
+* Fix: CSS tweaks
+
+= 1.0.1 =
+* Fix: Minor CSS
+
+= 1.0.0 =
+* Update: Extend theme options
+* Fix: CSS tweaks
+
+
+= 0.0.1 =
+* Submitted to WordPress.org

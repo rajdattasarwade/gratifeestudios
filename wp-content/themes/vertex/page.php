@@ -2,29 +2,26 @@
 get_header();
 ?>
 <div class="content">
-	<div class="container">
-		<div class="post_content">
-			<?php if(have_posts()): the_post(); ?>
-			<article class="post_box" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h1><?php the_title(); ?></h1>
-				<?php the_content(); ?>
-			</article>
-			<div class="clear"></div>
-			<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
-						<div class="home_blog_box">
-							<div class="comments_cont">
-							<?php
-								comments_template( '', true );
-							?>
-							</div>
-						</div>
-			<?php endif;
-			endif;
-			?>
-		</div>
-		<div class="clear"></div>
-	</div>
-	</div>
+<div class="container">
+<div class="post_content">
+    <?php
+    // Start the loop.
+    while ( have_posts() ) : the_post();
+
+        // Include the page content template.
+        get_template_part( 'content', 'page' );
+
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        endif;
+
+    // End the loop.
+    endwhile;
+    ?>
+</div>
+</div>
+</div>
 	<?php
 get_footer();
 ?>

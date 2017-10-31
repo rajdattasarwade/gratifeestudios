@@ -180,3 +180,14 @@ function vertex_the_category_filter($return,$separator=' ') {
 }
 
 add_filter('the_category','vertex_the_category_filter',10,2);
+
+add_filter( 'body_class','custom_body_class' );
+function custom_body_class( $classes ) {
+ 
+    if ( is_page_template( 'page-portfolio.php' ) ) {
+        $classes[] = 'archive';
+    }
+     
+    return $classes;
+     
+}
